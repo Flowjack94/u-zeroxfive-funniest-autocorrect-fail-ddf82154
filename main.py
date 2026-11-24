@@ -15,6 +15,8 @@ ENTRY = (
 
 
 def main() -> None:
+    assert 1 <= len(ENTRY) <= 199, f"entry length {len(ENTRY)} out of range 1-199"
+    ENTRY.encode("utf-8")  # entry must be valid UTF-8
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
